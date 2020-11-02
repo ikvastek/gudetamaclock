@@ -1,10 +1,10 @@
 import requests
 
 url = 'https://api.openweathermap.org/data/2.5/weather?q='
-city = 'CITY'
-state = 'STATE/PROVINCE'
-country = 'COUNTRY'
-apikey = 'YOUR OPENWEATHER API KEY'
+city = 'Zagreb'
+state = ''
+country = 'hr'
+apikey = 'yourAPIkey'
 
 query = '{},{},{}&appid={}'.format(city,state,country,apikey)
 request = url + query

@@ -1,13 +1,17 @@
 import time
 import requests
+import os
+
+dirname = os.path.dirname(__file__)
+icon_resources = os.path.join(dirname, 'icon')
 
 def moonphase():
 	url = 'https://api.met.no/weatherapi/sunrise/2.0/.json?'
 
 	### TO BE REPLACED ###
-	lat = 'LAT'
-	lon = '-LONG'
-	offset = 'OFFSET'
+	lat = '45.8'
+	lon = '15.9667'
+	offset = '+02:00'
 	### TO BE REPLACED ###
 	
 	date = time.strftime('%Y-%m-%d')
@@ -26,39 +30,39 @@ def moon_path():
 	moonphaseid = int(float(moonphase()))
 
 	if moonphaseid == 0:
-		moonpath = "/home/pi/clock/GudeClock/icon/m0.png"
+		moonpath = os.path.join(icon_resources, 'm0.png')
 	elif moonphaseid > 0 and moonphaseid <= 6:
-		moonpath = "/home/pi/clock/GudeClock/icon/m6.png"
+		moonpath = os.path.join(icon_resources, 'm6.png')
 	elif moonphaseid > 6 and moonphaseid <= 12:
-		moonpath = "/home/pi/clock/GudeClock/icon/m12.png"
+		moonpath = os.path.join(icon_resources, 'm12.png')
 	elif moonphaseid > 12 and moonphaseid <= 18:
-		moonpath = "/home/pi/clock/GudeClock/icon/m12.png"
+		moonpath = os.path.join(icon_resources, 'm12.png')
 	elif moonphaseid > 18 and moonphaseid <= 25:
-		moonpath = "/home/pi/clock/GudeClock/icon/m18.png"
+		moonpath = os.path.join(icon_resources, 'm18.png')
 	elif moonphaseid > 25 and moonphaseid <= 31:
-		moonpath = "/home/pi/clock/GudeClock/icon/m25.png"
+		moonpath = os.path.join(icon_resources, 'm25.png')
 	elif moonphaseid > 31 and moonphaseid <= 37:
-		moonpath = "/home/pi/clock/GudeClock/icon/m31.png"
+		moonpath = os.path.join(icon_resources, 'm31.png')
 	elif moonphaseid > 37 and moonphaseid <= 43:
-		moonpath = "/home/pi/clock/GudeClock/icon/m37.png"
+		moonpath = os.path.join(icon_resources, 'm37.png')
 	elif moonphaseid > 43 and moonphaseid <= 50:
-		moonpath = "/home/pi/clock/GudeClock/icon/m43.png"
+		moonpath = os.path.join(icon_resources, 'm43.png')
 	elif moonphaseid > 50 and moonphaseid <= 56:
-		moonpath = "/home/pi/clock/GudeClock/icon/m50.png"	
+		moonpath = os.path.join(icon_resources, 'm50.png')
 	elif moonphaseid > 56 and moonphaseid <= 62:
-		moonpath = "/home/pi/clock/GudeClock/icon/m56.png"	
+		moonpath = os.path.join(icon_resources, 'm56.png')
 	elif moonphaseid > 62 and moonphaseid <= 68:
-		moonpath = "/home/pi/clock/GudeClock/icon/m62.png"	
+		moonpath = os.path.join(icon_resources, 'm62.png')
 	elif moonphaseid > 68 and moonphaseid <= 75:
-		moonpath = "/home/pi/clock/GudeClock/icon/m68.png"	
+		moonpath = os.path.join(icon_resources, 'm68.png')
 	elif moonphaseid > 75 and moonphaseid <= 81:
-		moonpath = "/home/pi/clock/GudeClock/icon/m75.png"	
+		moonpath = os.path.join(icon_resources, 'm75.png')
 	elif moonphaseid > 81 and moonphaseid <= 87:
-		moonpath = "/home/pi/clock/GudeClock/icon/m81.png"
+		moonpath = os.path.join(icon_resources, 'm81.png')
 	elif moonphaseid > 87 and moonphaseid <= 93:
-		moonpath = "/home/pi/clock/GudeClock/icon/m87.png"
+		moonpath = os.path.join(icon_resources, 'm87.png')
 	elif moonphaseid > 93 and moonphaseid < 100:
-		moonpath = "/home/pi/clock/GudeClock/icon/m93.png"
+		moonpath = os.path.join(icon_resources, 'm93.png')
 	else:
-		moonpath = "/home/pi/clock/GudeClock/icon/m100.png"
+		moonpath = os.path.join(icon_resources, 'm100.png')
 	return moonpath
